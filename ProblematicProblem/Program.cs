@@ -1,16 +1,74 @@
-System;
-using System.Collections.Generic
+using System;
+using System.Collections.Generic;
+using System.Reflection.Metadata.Ecma335;
 using System.Threading;
 
-ProblematicProblem
+namespace ProblematicProblem
 {
-    Program class
+    public class Program
     {
-        Random rng;
-static bool cont = true;
-static List<string> activities = new List<string>() { "Movies", "Paintball", "Bowling", "Lazer Tag", "LAN Party", "Hiking", "Axe Throwing", "Wine Tasting" }
+
         static void Main(string[] args)
-{
+        {
+            string[] userInfo = new string[];
+            userInfo = Greeting(userInfo);
+
+        }    
+        
+        public static string[] Greeting(string[] userInfo)
+        {
+            
+            Console.Write("Hello, welcome to the random activity generator! \n");
+            Console.WriteLine("Would you like to generate a random activity? yes/no: ");
+            string contnu = Console.ReadLine();
+            if (contnu.ToLower() == "yes")
+            {
+                Console.Write("We are going to need your information first! What is your name? ");
+                userInfo[0] = Console.ReadLine();
+                Console.WriteLine();
+                Console.Write("What is your age? ");
+                int userAge = int.TryParse(Console.ReadLine());
+            }
+            else 
+            {
+                Console.WriteLine("Oh, you don't like random activities? Thank you, goodbye!");
+                return userInfo 
+            }
+            Console.WriteLine();
+            Console.Write("We are going to need your information first! What is your name? ");
+            string userName = Console.ReadLine();
+            Console.WriteLine();
+            Console.Write("What is your age? ");
+            int userAge = int.TryParse(Console.ReadLine());
+            Console.WriteLine();
+
+            return userInfo;
+        }
+
+        public static void DisplayActivities()
+        {
+
+        }
+
+        public static void AddActivity()
+        {
+
+
+        }
+        Random rng = new Random();
+        bool cont = true;
+        List<string> activities = new List<string>()
+        {  "Movies",
+            "Paintball",
+            "Bowling",
+            "Lazer Tag",
+            "LAN Party",
+            "Hiking",
+            "Axe Throwing",
+            "Wine Tasting"
+        };
+
+
     Console.Write("Hello, welcome to the random activity generator! \nWould you like to generate a random activity? yes/no: ")
             bool cont = bool.Parse(Console.ReadLine());
     Console.WriteLine();
@@ -18,7 +76,7 @@ static List<string> activities = new List<string>() { "Movies", "Paintball", "Bo
     string userName = Console.ReadLine();
     Console.WriteLine();
     Console.Write("What is your age? ");
-    int userAge = Console.ReadLine();
+    int userAge = int.Parse(Console.ReadLine());
     Console.WriteLine();
     Console.Write("Would you like to see the current list of activities? Sure/No thanks: ");
     bool seeList = bool.Parse(Console.ReadLine());
@@ -55,7 +113,7 @@ static List<string> activities = new List<string>() { "Movies", "Paintball", "Bo
         for (int i = 0; i < 10; i++)
         {
             Console.Write(". ");
-            Thread.Sleep(500);
+            Thread.Sleep(2);
         }
         Console.WriteLine()
                 Console.Write("Choosing your random activity");
